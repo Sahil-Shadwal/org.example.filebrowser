@@ -1,0 +1,36 @@
+{
+  "id" : "org.example.filebrowser",
+  "runtime" : "org.gnome.Platform",
+  "runtime-version" : "45",
+  "runtime-commit" : "e6f142e232584a0575c084d3d619fc5a81b73f39b84d939672f2fd91fb284f63",
+  "sdk" : "org.gnome.Sdk",
+  "sdk-commit" : "a6c411c0a5e16a7389059c7cd3834babcb7f40f7cb7b94d9329e4bdd3f8cff4c",
+  "command" : "org.example.filebrowser",
+  "modules" : [
+    {
+      "name" : "filebrowser",
+      "buildsystem" : "meson",
+      "sources" : [
+        {
+          "path" : ".",
+          "type" : "dir"
+        }
+      ]
+    }
+  ],
+  "cleanup" : [
+    "/include",
+    "/lib/pkgconfig",
+    "/share/doc",
+    "/share/man",
+    "*.a",
+    "*.la"
+  ],
+  "finish-args" : [
+    "--socket=wayland",
+    "--socket=fallback-x11",
+    "--share=ipc",
+    "--device=dri"
+  ],
+  "source-date-epoch" : 1704991352
+}
